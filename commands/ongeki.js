@@ -38,7 +38,7 @@ module.exports = {
     const songs = await getRandomMusic('ongeki', { difficulty, level }, count);
 
     if (!songs || songs.length === 0) {
-      await interaction.reply('条件に合う曲が見つかりませんでした\n曲数かレベルを見直してください');
+      await interaction.editReply('条件に合う曲が見つかりませんでした\n曲数かレベルを見直してください');
       return;
     }
 

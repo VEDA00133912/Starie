@@ -29,9 +29,6 @@ module.exports = {
         .setRequired(false)
     ),
 
-  /**
-   * @param {import('discord.js').ChatInputCommandInteraction} interaction
-   */
   async execute(interaction) {
     const difficulty = interaction.options.getString('difficulty') || 'master';
     const level = interaction.options.getString('level') || undefined;
@@ -41,7 +38,7 @@ module.exports = {
     const songs = await getRandomMusic('maimai', { difficulty, level }, count);
 
     if (!songs || songs.length === 0) {
-      await interaction.reply('条件に合う曲が見つかりませんでした\n曲数かレベルを見直してください');
+      await interaction.editReply('条件に合う曲が見つかりませんでした\n曲数かレベルを見直してください');
       return;
     }
 

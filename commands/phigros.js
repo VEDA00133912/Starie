@@ -30,15 +30,14 @@ module.exports = {
     ),
 
   async execute(interaction) {
-    const difficulty = interaction.options.getString('difficulty') || 'master';
+    const difficulty = interaction.options.getString('difficulty') || 'IN';
     const level = interaction.options.getString('level') || undefined;
     const count = interaction.options.getInteger('count') || 1;
 
     await interaction.deferReply();
     const songs = await getRandomMusic('phigros', { difficulty, level }, count);
-
     if (!songs || songs.length === 0) {
-      await interaction.reply('条件に合う曲が見つかりませんでした\n曲数かレベルを見直してください');
+      await interaction.editReply('条件に合う曲が見つかりませんでした\n曲数かレベルを見直してください');
       return;
     }
 
@@ -47,10 +46,9 @@ module.exports = {
       .setColor('#d2d1ff');
 
     for (const song of songs) {
-      const levField = song[`lev_${difficulty.substring(0, 3)}`] ?? '不明';
       embed.addFields({
         name: song.title,
-        value: `${difficulty.toUpperCase()} ${level ?? levField} [Wikiリンク](${song.wiki_url})`,
+        value: `${difficulty.toUpperCase()} ${song.level} [Wikiリンク](${song.wiki_url})`,
       });
     }
 
