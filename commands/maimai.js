@@ -4,6 +4,7 @@ const { getRandomMusic, encodeWikiUrl } = require('../lib/random/index');
 const difficulties = ['basic', 'advanced', 'expert', 'master', 'remaster'];
 
 module.exports = {
+  cooldown: 5,
   data: new SlashCommandBuilder()
     .setName('maimai')
     .setDescription('maimaiのランダム選曲')

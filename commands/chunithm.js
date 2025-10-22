@@ -4,6 +4,7 @@ const { getRandomMusic, encodeWikiUrl } = require('../lib/random/index');
 const difficulties = ['basic', 'advanced', 'expert', 'master', 'ultima'];
 
 module.exports = {
+  cooldown: 5,
   data: new SlashCommandBuilder()
     .setName('chunithm')
     .setDescription('CHUNITHMのランダム選曲')
