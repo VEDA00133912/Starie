@@ -1,0 +1,6 @@
+{
+  "watch": ["commands", "lib", "events", "index.js"],
+  "ext": "js,json",
+  "ignore": ["cache/*"],
+  "exec": "node index.js"
+}

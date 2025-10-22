@@ -1,0 +1,29 @@
+{
+  "name": "starie",
+  "version": "1.0.0",
+  "description": "SoD-BOT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VEDA00133912/starie.git"
+  },
+  "author": "りょう",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VEDA00133912/starie/issues"
+  },
+  "homepage": "https://github.com/VEDA00133912/starie#readme",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "discord.js": "^14.23.2",
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
