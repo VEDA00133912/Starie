@@ -35,7 +35,7 @@ async function deployCommands() {
 
     console.log(`All done! (${commands.length} commands registered to ${guildIds.length} guilds)`);
   } catch (error) {
-    console.error('Command registration error:', error);
+    console.error('Command registration error:', error.message);
   }
 }
 

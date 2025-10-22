@@ -6,7 +6,7 @@ module.exports = {
     .setName('ping')
     .setDescription('Botの応答速度を確認します'),
 
-  async execute(interaction, client) {
+  async execute(interaction) {
     const start = Date.now();
     await interaction.reply({ content: '🏓 Ping! 計測中...' });
 
