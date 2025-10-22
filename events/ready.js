@@ -8,7 +8,7 @@ module.exports = {
   async execute(client) {
     console.log(`${client.user?.tag} is ready!`);
 //    await deleteGlobalCommands();
-    await deployCommands();
+    await deployCommands(client);
 
     client.user?.setActivity({
       name: 'Star of Down',
